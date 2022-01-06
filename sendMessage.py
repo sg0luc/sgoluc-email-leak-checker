@@ -13,7 +13,7 @@ def sendmessage(message):
     try:
         requests.post(
             url='https://api.telegram.org/bot{0}/{1}'.format(token, method),
-            data={'chat_id': '553990167', 'text': message}
+            data={'chat_id': '-553990167', 'text': message}
         ).json()
         print("Message sent.")
     except Exception as e:
