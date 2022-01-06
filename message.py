@@ -1,3 +1,3 @@
 from sendMessage import sendmessage
 
-sendmessage("Teste")
+sendmessage('Teste')
