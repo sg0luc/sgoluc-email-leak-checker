@@ -7,7 +7,8 @@ SendMessage Function
 import requests
 
 def sendmessage(message):
-    token = '[YOUR_BOT_TOKEN]'
+    tokenfile = open('C:\\Users\\lucas\\OneDrive\\Documents\\Projects\\Keys\\telegram_token.txt', 'r')
+    token = tokenfile.read()
     method = 'sendMessage'
     print(token)
     try:
@@ -20,5 +21,3 @@ def sendmessage(message):
         print("Message not sent. Reason:", e)
 
     return message
-
-sendmessage('[YOUR_MESSAGE]')
