@@ -7,7 +7,6 @@ import sys
 import json
 import requests
 from pprint import pprint
-from sendMessage import sendmessage
 
 # Raw URL: https://leakcheck.net/api?key=YOUR_KEY&check=example@example.com&type=email
 # Usage: python leakCheck.py [TYPE] [SEARCH]
@@ -21,7 +20,6 @@ check = sys.argv[2]
 try:
     request = requests.get('https://leakcheck.net/api?key=' + api_key + '&check=' + check + '&type=' + search_type)
     response = json.loads(request.text)
-    for i in response['result']:
-        pprint(i)
+    pprint(response)
 except Exception as e:
     print('Request not sent. Reason:', e)
