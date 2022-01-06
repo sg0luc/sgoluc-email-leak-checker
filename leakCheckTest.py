@@ -22,6 +22,6 @@ try:
     request = requests.get('https://leakcheck.net/api?key=' + api_key + '&check=' + check + '&type=' + search_type)
     response = json.loads(request.text)
     for i in response['result']:
-        sendmessage(i)
+        pprint(i)
 except Exception as e:
     print('Request not sent. Reason:', e)
