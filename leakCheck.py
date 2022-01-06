@@ -23,6 +23,5 @@ try:
     response = json.loads(request.text)
     for i in response['result']:
         pprint(i)
-        sendmessage(i)
 except Exception as e:
     print('Request not sent. Reason:', e)
