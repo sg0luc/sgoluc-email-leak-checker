@@ -8,9 +8,7 @@ import requests
 
 def sendmessage(message):
     tokenfile = open('C:\\Users\\lucas\\OneDrive\\Documents\\Projects\\Keys\\telegram_token.txt', 'r')
-    channelidfile = open('C:\\Users\\lucas\\OneDrive\\Documents\\Projects\\Keys\\telegram_channelid.txt', 'r')
     token = tokenfile.read()
-    channel_id = channelidfile.read()
     method = 'sendMessage'
     try:
         requests.post(
