@@ -21,4 +21,4 @@ def sendmessage(message):
 
     return message
 
-sendmessage('[YOUR_MESSAGE')
+sendmessage('[YOUR_MESSAGE]')
