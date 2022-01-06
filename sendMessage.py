@@ -10,12 +10,10 @@ def sendmessage(message):
     tokenfile = open('C:\\Users\\lucas\\OneDrive\\Documents\\Projects\\Keys\\telegram_token.txt', 'r')
     token = tokenfile.read()
     method = 'sendMessage'
-    chat_id = '-553990167'
     try:
         requests.post(
-            url='https://api.telegram.org/bot{0}/{1}?chat_id={2}&text={3}'.format(token, method, chat_id, message),
-#            url='https://api.telegram.org/bot{0}/{1}?'.format(token, method),
-#            data={'chat_id': '-553990167', 'text': message}
+            url='https://api.telegram.org/bot{0}/{1}?'.format(token, method),
+            data={'chat_id': '-553990167', 'text': message}
         ).json()
         print("Message sent.")
     except Exception as e:
