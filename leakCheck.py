@@ -20,7 +20,8 @@ check = sys.argv[2]
 try:
     request = requests.get('https://leakcheck.net/api?key=' + api_key + '&check=' + check + '&type=' + search_type)
     response_json = json.loads(request.text)
-    pprint(response_json)
+    response = response_json['result']
+    pprint(response)
 
 except Exception as e:
     print('Request not sent. Reason:', e)
