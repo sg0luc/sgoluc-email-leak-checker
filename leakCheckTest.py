@@ -1,5 +1,5 @@
 """
-Sgoluc LeakCheck Script
+Sgoluc LeakCheck Test Script
 Only works with linked IPs!
 """
 
@@ -19,9 +19,8 @@ check = sys.argv[2]
 
 try:
     request = requests.get('https://leakcheck.net/api?key=' + api_key + '&check=' + check + '&type=' + search_type)
-    response_json = json.loads(request.text)
-    response = response_json['result']
-    pprint(response)
-
+    response = json.loads(request.text)
+    for i in response['result']:
+        pprint(i)
 except Exception as e:
     print('Request not sent. Reason:', e)
