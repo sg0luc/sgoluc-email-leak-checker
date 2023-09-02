@@ -20,5 +20,3 @@ def sendmessage(message):
         print("Message not sent. Reason: ", e)
 
     return message
-
-sendmessage("Teste")
