@@ -21,4 +21,4 @@ def sendmessage(message):
 
     return message
 
-sendmessage("FODA-SE MEU PAU AI DENTO FUNDO")
+sendmessage("Teste")
