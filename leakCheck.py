@@ -2,7 +2,6 @@
 Sgoluc LeakCheck Test Script
 Only works with linked IPs!
 """
-
 import sys
 import json
 import requests
@@ -24,8 +23,10 @@ for e in emails_list:
     try:
         request = requests.get('https://leakcheck.io/api?key=' + api_key + '&type=' + search_type + '&check=' + e)
         response = json.loads(request.text)
-        print('Results for', e, ':')
         for i in response['result']:
-            pprint(i)
+            message = 'Credencial: ' + i['line'] + '\n' + 'Fonte(s): ' + s + '\n' + 'Último vazamento: ' + i['last_breach']
+            print(response)
+            print(message)
+            #sendmessage(message)
     except Exception as e:
-        print('Request not sent. Reason: ', e)
+        print('Request not sent. Reason:', e)
