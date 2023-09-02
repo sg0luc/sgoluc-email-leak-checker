@@ -23,4 +23,4 @@ try:
     pprint(response_json)
 
 except Exception as e:
-    print('Request not sent. Reason:', e)
+    print('Request not sent. Reason: ', e)
