@@ -19,8 +19,6 @@ api_key = api_file.read()
 emails_file = open('C:\\Users\\lucas\\OneDrive\\Documents\\Projects\\Keys\\emails.txt', 'r') # Store your email list into this file
 emails_list = emails_file.readlines()
 
-search_type = sys.argv[1]
-
 sent_messages_file = 'C:\\Users\\lucas\\OneDrive\\Documents\\Projects\\Keys\\sent_messages.json' # Store already sent messages into 'sent_messages.json' file, to avoid realerting
 sent_messages = {}
 
@@ -34,7 +32,7 @@ except (FileNotFoundError, json.decoder.JSONDecodeError):
 # Search for each email in 'emails.txt' file
 for e in emails_list:
     try:
-        request = requests.get('https://leakcheck.io/api?key=' + api_key + '&type=' + search_type + '&check=' + e)
+        request = requests.get('https://leakcheck.io/api?key=' + api_key + '&type=email&check=' + e)
         response = json.loads(request.text)
 
         # Create initial message variable for each email and leak
