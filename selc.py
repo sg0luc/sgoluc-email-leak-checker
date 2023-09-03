@@ -54,7 +54,10 @@ for e in emails_list:
 
             # Verify if message is already sent
             if keys_str not in sent_messages:
+                # Send message to Telegram
                 sendmessage(message)
+                # Print message to screen
+                #print(message)
                 sent_messages[keys_str] = message
 
     except Exception as e:
