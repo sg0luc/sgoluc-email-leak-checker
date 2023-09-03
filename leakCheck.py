@@ -1,3 +1,10 @@
+"""
+Sgoluc Leak Check
+Author: Sg0luc
+Created: 2023-09-03
+Enjoy! :)
+"""
+
 import sys
 import json
 import requests
@@ -5,7 +12,7 @@ from pprint import pprint
 from sendMessage import sendmessage
 
 # Raw URL: https://leakcheck.io/api?key=YOUR_KEY&check=example@example.com&type=email
-# Usage: python leakCheckTest.py [TYPE]
+# Usage: python leakCheck.py [TYPE]
 
 api_file = open('C:\\Users\\lucas\\OneDrive\\Documents\\Projects\\Keys\\leakcheck_token.txt', 'r')
 api_key = api_file.read()
@@ -21,7 +28,7 @@ arquivo_mensagens_enviadas = 'C:\\Users\\lucas\\OneDrive\\Documents\\Projects\\K
 # Inicialize mensagens_enviadas como um dicionário vazio
 mensagens_enviadas = {}
 
-# Carregue as informações sobre mensagens enviadas do arquivo, se existirem
+# Carregar as informações sobre mensagens enviadas do arquivo, se existirem
 try:
     with open(arquivo_mensagens_enviadas, 'r') as arquivo:
         mensagens_enviadas = json.load(arquivo)
@@ -43,24 +50,23 @@ for e in emails_list:
 
             message += 'Último vazamento: ' + i['last_breach']
 
-            # Crie uma chave composta com e-mail, source e data do último vazamento
+            # Criar uma chave composta com e-mail, source e data do último vazamento
             chave = (e.strip(), ', '.join(i['sources']), i['last_breach'])
 
-            # Converta a tupla em uma string para usá-la como chave
+            # Converter a tupla em uma string para usá-la como chave
             chave_str = str(chave)
 
-            # Verifique se a mensagem já foi enviada anteriormente
+            # Verificar se a mensagem já foi enviada anteriormente
             if chave_str not in mensagens_enviadas:
-                print(message)
-                # Envie a mensagem para o Telegram (ou realize a ação desejada)
+                # Enviar a mensagem para o Telegram (ou realize a ação desejada)
                 sendmessage(message)
-                # Adicione a mensagem ao dicionário de mensagens enviadas
+                # Adicionar a mensagem ao dicionário de mensagens enviadas
                 mensagens_enviadas[chave_str] = message
 
     except Exception as e:
         print('Request not sent. Reason:', e)
 
-# Salve as informações sobre mensagens enviadas de volta no arquivo
+# Salvar as informações sobre mensagens enviadas de volta no arquivo
 with open(arquivo_mensagens_enviadas, 'w') as arquivo:
     json.dump(mensagens_enviadas, arquivo)
 
