@@ -7,7 +7,7 @@ SendMessage Function
 import requests
 
 def sendmessage(message):
-    tokenfile = open('C:\\Users\\lucas\\OneDrive\\Documents\\Projects\\Keys\\telegram_token.txt', 'r')
+    tokenfile = open('/Users/lucas/Documents/Projects/Keys/telegram_token.txt', 'r')
     token = tokenfile.read()
     method = 'sendMessage'
     try:

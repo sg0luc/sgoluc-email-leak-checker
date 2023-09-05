@@ -16,10 +16,10 @@ from sendMessage import sendmessage
 api_file = open('/Users/lucas/Documents/Projects/Keys/leakcheck_token.txt', 'r') # Store your LeakCheck token into this file and read it
 api_key = api_file.read()
 
-emails_file = open('C:\\Users\\lucas\\OneDrive\\Documents\\Projects\\Keys\\emails.txt', 'r') # Store your email list into this file
+emails_file = open('/Users/lucas/Documents/Projects/Keys/emails.txt', 'r') # Store your email list into this file
 emails_list = emails_file.readlines()
 
-sent_messages_file = 'C:\\Users\\lucas\\OneDrive\\Documents\\Projects\\Keys\\sent_messages.json' # Store already sent messages into 'sent_messages.json' file, to avoid realerting
+sent_messages_file = '/Users/lucas/Documents/Projects/Keys/sent_messages.json' # Store already sent messages into 'sent_messages.json' file, to avoid realerting
 sent_messages = {}
 
 # Try to load 'sent_messages.json' file
