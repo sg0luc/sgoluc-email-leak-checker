@@ -13,7 +13,7 @@ from sendMessage import sendmessage
 # Raw URL: https://leakcheck.io/api?key=YOUR_KEY&check=example@example.com&type=email
 # Usage: python selc.py email
 
-api_file = open('C:\\Users\\lucas\\OneDrive\\Documents\\Projects\\Keys\\leakcheck_token.txt', 'r') # Store your LeakCheck token into this file and read it
+api_file = open('/Users/lucas/Documents/Projects/Keys/leakcheck_token.txt', 'r') # Store your LeakCheck token into this file and read it
 api_key = api_file.read()
 
 emails_file = open('C:\\Users\\lucas\\OneDrive\\Documents\\Projects\\Keys\\emails.txt', 'r') # Store your email list into this file
