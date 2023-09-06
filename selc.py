@@ -11,7 +11,6 @@ from pprint import pprint
 from sendMessage import sendmessage
 
 # Raw URL: https://leakcheck.io/api?key=YOUR_KEY&check=example@example.com&type=email
-# Usage: python selc.py email
 
 api_file = open('/Users/lucas/Documents/Projects/Keys/leakcheck_token.txt', 'r') # Store your LeakCheck token into this file and read it
 api_key = api_file.read().strip()
@@ -60,7 +59,6 @@ for e in emails_list:
                 # Print message to screen
                 #print(message)
                 sent_messages[keys_str] = message
-        sleep(5)
     except Exception as e:
         print('Request not sent. Reason:', e, '\n')
 
