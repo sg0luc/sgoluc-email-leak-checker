@@ -6,7 +6,7 @@ import requests
 
 def sendmessage(message):
     tokenfile = open('/Users/lucas/Documents/Projects/Keys/telegram_token.txt', 'r')
-    token = tokenfile.read()
+    token = tokenfile.read().strip()
     method = 'sendMessage'
     try:
         requests.post(
@@ -18,5 +18,3 @@ def sendmessage(message):
         print("Message not sent. Reason: ", e)
 
     return message
-
-sendmessage("Teste")
