@@ -1,5 +1,5 @@
 # Sgoluc Email Leak Checker
-Olá1 Criei esse projeto para fins educacionais, mas decidi monitorar alguns e-mails de amigos e familiares de forma automatizada. Este script utiliza a API do [LeakCheck](https://leakcheck.net) para pesquisar - _dada uma lista de e-mails_ - por vazamentos envolvendo tais endereços.
+Olá! Criei esse projeto para fins educacionais, mas decidi monitorar alguns e-mails de amigos e familiares de forma automatizada. Este script utiliza a API do [LeakCheck](https://leakcheck.net) para pesquisar - _dada uma lista de e-mails_ - por vazamentos envolvendo tais endereços.
 
 ## Pré-requisitos
 - Uma conta no LeakCheck com uma chave de API
