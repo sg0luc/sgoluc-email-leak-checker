@@ -1,9 +1,7 @@
 """
-Sgoluc Simple Telegram
-SendMessage Function
+Simple Telegram SendMessage Function
 :)
 """
-
 import requests
 
 def sendmessage(message):
@@ -20,3 +18,5 @@ def sendmessage(message):
         print("Message not sent. Reason: ", e)
 
     return message
+
+sendmessage("Teste")
